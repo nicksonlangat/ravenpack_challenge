@@ -22,19 +22,19 @@ def get_unique_word_counts(unique_words: list, string):
 
 def get_most_common_words():
     user_input = input(' Enter text string: ')
-    words = convert_to_lowercase_and_split(user_input)
+    words = convert_to_lowercase_and_split(user_input) #Try to split and turn words to lower case
 
-    unique_words = get_unique_words(words)
+    unique_words = get_unique_words(words) #new list with unique words
         
-    counts = get_unique_word_counts(unique_words, user_input)
+    counts = get_unique_word_counts(unique_words, user_input) #Get word counts for each.
 
-    counts.sort()
-    counts.reverse()
+    counts.sort() #Sorting the list puts the lowest counts first.
+    counts.reverse() # Reverse it, putting the highest counts first.
 
+    # Print the three words with the highest counts.
     for i in range(min(3, len(counts))):
         count, word = counts[i]
         print(f"{word} appears {count} times")
-
 
 if __name__ == '__main__':
     get_most_common_words()
